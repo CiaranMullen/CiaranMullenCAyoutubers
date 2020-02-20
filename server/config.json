@@ -1,3 +1,6 @@
 {
-  "mongoConnectionString": "'mongodb://localhost/cakes-db"
+  "mongoConnectionString": "'mongodb://localhost/cakes",
+  "mongoConnectionString": "'mongodb://localhost/youtubers"
 }
+
+  
