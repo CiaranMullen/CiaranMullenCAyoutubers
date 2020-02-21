@@ -3,7 +3,7 @@ import {Link}             from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import * as Config        from '../config.json'
 
-class Cake extends React.Component {
+class Youtuber extends React.Component {
 
   // #######################################################
   // # Local state
@@ -17,40 +17,40 @@ class Cake extends React.Component {
 
   render() {
 
-    if (!this.state.cake && this.state.cakeLoaded === true) {
+    if (!this.state.youtuber && this.state.youtuberLoaded === true) {
       return (
-        <p>Error loading cakes. Try again later.</p>
+        <p>Error loading youtubers. Try again later.</p>
       );
-    } else if (!this.state.youtube) {
+    } else if (!this.state.youtuber) {
       return (
         <p>Loading youtubers...</p>
       );
-    } else if (this.state.youtube.length === 0) {
+    } else if (this.state.youtuber.length === 0) {
       return (
         <p>Sorry, no youtubers are available</p>
       );
     } else {
       return (
         <div>
-          <h1>{this.state.youtube.title}</h1>
-          <Link to='/'>Back to All cakes</Link>
+          <h1>{this.state.youtuber.title}</h1>
+          <Link to='/'>Back to All youtubers</Link>
         </div>
       )
     }
   }
 
   componentDidMount() {
-    fetch(urlToCurrentDomain(`${Config.youtubersAPI}/${this.props.youtubeID}`))
+    fetch(urlToCurrentDomain(`${Config.youtubersAPI}/${this.props.youtuberID}`))
       .then (res  => res.json())
       .then (json => {
-        this.setState({youtube       : json});
-        this.setState({youtubeLoaded : true});
+        this.setState({youtuber       : json});
+        this.setState({youtuberLoaded : true});
       })
       .catch(err => {
-        this.setState({youtubeLoaded: true});
+        this.setState({youtuberLoaded: true});
       });
   }
 
 }
 
-export default Youtube;
+export default Youtuber;

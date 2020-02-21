@@ -2,7 +2,7 @@ const mongoose  = require('mongoose');
 const validator = require('validator');
 
 const SchemeConfig = {timestamps: true, skipVersioning: true};
-const YoutubeSchema  = new mongoose.Schema({
+const YoutuberSchema  = new mongoose.Schema({
 
     title: {
       type      : String,
@@ -12,4 +12,4 @@ const YoutubeSchema  = new mongoose.Schema({
 
   }, SchemeConfig);
 
-  module.exports.Youtube = mongoose.model('Youtube', YoutubeSchema);
+  module.exports.Youtuber = mongoose.model('Youtuber', YoutuberSchema);

@@ -1,7 +1,7 @@
 const express  = require('express');
 const router   = express.Router();
 const mongoose = require('mongoose'); // using to generate ObjectIDs
-const Youtube   = require('../models/Youtube').Youtube;
+const Youtuber   = require('../models/Youtuber').Youtuber;
 
 /**
  * Functionality for this route:
@@ -15,7 +15,7 @@ const Youtube   = require('../models/Youtube').Youtube;
 // GET an array of all Youtubers
 router.get('/', (req, res) => {
     return mongoose
-      .model('Youtube')
+      .model('Youtuber')
       .find({})
       .then (youtubers => res.json(youtubers))
       .catch(err => res
@@ -24,26 +24,26 @@ router.get('/', (req, res) => {
       );
   });
 
-  // GET a single youtube by ID
+  // GET a single youtuber by ID
 router.get('/:id([0-9a-fA-F]{24})', (req, res) => {
   return mongoose
-    .model('Youtube')
+    .model('Youtuber')
     .findOne({_id: req.params.id})
-    .then (youtube => res.json(youtube))
+    .then (youtuber => res.json(youtuber))
     .catch(err => res
       .status(500)
       .json({ok: false})
     );
 });
 
-// POST Create a new youtube
+// POST Create a new youtuber
 router.post('/', (req, res) => {
-  return new Youtube({
+  return new Youtuber({
     title     : req.body.title,
   })
   .save()
-  .then (youtube => Youtube.populate(youtube, {path: '_id'}))
-  .then (youtube => res.json(youtube))
+  .then (youtuber => Youtuber.populate(youtuber, {path: '_id'}))
+  .then (youtuber => res.json(youtuber))
   .catch(err => res
     .status(400)
     .json({ok: false, error: err.message})
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
 
 // DELETE Delete a topic with a given ID
 router.delete('/:id([0-9a-fA-F]{24})', (req, res) => {
-  return Youtube
+  return Youtuber
     .deleteOne({_id: req.params.id})
     .then (() => res.json({'ok': true}))
     .catch(err => res
@@ -61,9 +61,9 @@ router.delete('/:id([0-9a-fA-F]{24})', (req, res) => {
     );
 });
 
-// PUT Update a youtube
+// PUT Update a youtuber
 router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
-  return Youtube
+  return Youtuber
     .findOneAndUpdate(
       {_id: req.params.id},
       {$set: {
@@ -71,8 +71,8 @@ router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
       }},
       {new: true}
     )
-    .then (youtube => Youtube.populate(youtube, {path: '_id'}))
-    .then (youtube => res.json(youtube))
+    .then (youtuber => Youtuber.populate(youtuber, {path: '_id'}))
+    .then (youtuber => res.json(youtuber))
     .catch(err => res
       .status(500)
       .json({ok: false})

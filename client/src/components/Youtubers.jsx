@@ -3,7 +3,7 @@ import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import {Link}             from '@reach/router';
 import * as Config        from '../config.json'
 
-class Cakes extends React.Component {
+class Youtubers extends React.Component {
 
   // #######################################################
   // # Local state
@@ -34,11 +34,11 @@ class Cakes extends React.Component {
         <div>
           <h1>All youtubers in the database</h1>
           <ul>
-            {this.state.youtubers.map(youtube => (
-              <li key={`youtube${youtube._id}`}><Link to={`/youtube/${youtube._id}`}>{youtube.title}</Link></li>
+            {this.state.youtubers.map(youtuber => (
+              <li key={`youtuber${youtuber._id}`}><Link to={`/youtuber/${youtuber._id}`}>{youtuber.title}</Link></li>
             ))}
           </ul>
-          <p><Link to='/add-youtube'>Add a new youtube</Link></p>
+          <p><Link to='/add-youtuber'>Add a new youtuber</Link></p>
         </div>
       )
     }

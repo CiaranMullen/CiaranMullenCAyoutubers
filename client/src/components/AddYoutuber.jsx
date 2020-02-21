@@ -3,7 +3,7 @@ import {navigate, Link}   from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import * as Config        from '../config.json'
 
-class AddCake extends React.Component {
+class AddYoutuber extends React.Component {
 
   // #######################################################
   // # Local state
@@ -23,39 +23,39 @@ class AddCake extends React.Component {
       return (
         <div>
           <h1>Error</h1>
-          <p>Sorry, there was an error creating the cake. The error was: {this.state.reportedError || 'Unknown'}</p>
+          <p>Sorry, there was an error creating the youtuber. The error was: {this.state.reportedError || 'Unknown'}</p>
           <a href='#' onClick={this.resetForRetry.bind(this)}>Try again</a>&nbsp;|&nbsp;
-          <Link to='/'>Back to All cakes</Link>
+          <Link to='/'>Back to All youtubers</Link>
         </div>
       );
     } else if (this.state.processingAdd) {
       return (
-        <div>Adding cake...</div>
+        <div>Adding youtuber channel...</div>
       );
     } else {
       return (
         <div>
-          <h1>Add a cake</h1>
+          <h1>Add youtuber channel</h1>
           <form onSubmit={this.handleSubmit.bind(this)}>
 
             <div>
-              <label>cake Title:
+              <label>youtuber Title:
                 <input type='' value={this.state.title} onChange={this.handleTitleUpdate.bind(this)} />
               </label>
             </div>
 
             {/* <div>
-              <label>cake Content:
+              <label>youtuber Content:
                 <textarea value={this.state.content} onChange={this.handleContentUpdate.bind(this)}></textarea>
               </label>
             </div> */}
 
             <div>
-              <input type='submit' value='Add Cake' />
+              <input type='submit' value='Add Youtuber' />
             </div>
 
           </form>
-          <Link to='/'>Back to All cakes</Link>
+          <Link to='/'>Back to All youtubers</Link>
         </div>
       );
     }
@@ -75,7 +75,7 @@ class AddCake extends React.Component {
     e.preventDefault();
 
     // Perform a POST call for the new data
-    fetch(urlToCurrentDomain(`${Config.cakesAPI}`), {
+    fetch(urlToCurrentDomain(`${Config.youtubersAPI}`), {
       method : 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ class AddCake extends React.Component {
         }
         return res.json();
       })
-      .then (json => navigate(`/cake/${json._id}`))
+      .then (json => navigate(`/youtuber/${json._id}`))
       .catch(err => {
         this.setState({reportedError: err.message || 'Unknown'});
       })
@@ -104,9 +104,9 @@ class AddCake extends React.Component {
   }
 
   componentDidMount() {
-    // this.getComments(this.props.cakeID);
+    // this.getComments(this.props.youtuberID);
   }
 
 }
 
-export default AddCake;
+export default AddYoutuber;
