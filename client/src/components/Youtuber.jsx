@@ -1,6 +1,7 @@
 import React              from 'react';
 import {Link}             from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
+import main               from '../lib/main.css';
 import * as Config        from '../config.json'
 
 class Youtuber extends React.Component {
