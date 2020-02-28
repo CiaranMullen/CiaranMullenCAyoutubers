@@ -15,7 +15,7 @@ const YoutuberSchema  = new mongoose.Schema({
       validator : value => !validator.isEmpty(value)
     },
       subs: {
-      type      : int,
+      type      : String,
       required  : true,
       validator : value => !validator.isEmpty(value)
     },
