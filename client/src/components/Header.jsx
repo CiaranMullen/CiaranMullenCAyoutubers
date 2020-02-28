@@ -2,7 +2,7 @@ import React              from 'react';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import {Link}             from '@reach/router';
 import * as Config        from '../config.json'
-import main               from '../lib/sass';
+import '../lib/sass/main.scss';
 class Header extends React.Component {
 
   // #######################################################
@@ -17,9 +17,12 @@ class Header extends React.Component {
 
   render() {
       return (
+        <header>
         <div>
           <h1>All youtubers in the database</h1>  
         </div>
+        </header>
+      
       )
     
   }
@@ -38,5 +41,5 @@ class Header extends React.Component {
 
 }
 
-export default Headers;
+export default Header;
 

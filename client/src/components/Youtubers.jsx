@@ -32,7 +32,21 @@ class Youtubers extends React.Component {
     } else {
       return (
         <div>
-          <h1>All youtubers in the database</h1>
+        <div class="navbar">
+        <ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+</ul>
+        </div>
+  
           <ul>
             {this.state.youtubers.map(youtuber => (
               <li key={`youtuber${youtuber._id}`}><Link to={`/youtuber/${youtuber._id}`}>{youtuber.title}</Link></li>

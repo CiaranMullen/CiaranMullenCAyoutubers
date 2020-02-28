@@ -1,12 +1,10 @@
-//this is for header css//@at-root
+/*this is for header css*/
 
-
-header {
-    margin: 0;
-    border-bottom: 2px solid black;
-}
-header h1 {
-    margin: 0;
-    padding: .5em 0;
-    color: black;
-}
+@mixin transform($property) {
+    list-style-type: none;
+    margin: $property;
+    padding: $property;
+    overflow: hidden;
+  }
+ 
+       

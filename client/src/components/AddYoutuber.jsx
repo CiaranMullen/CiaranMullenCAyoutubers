@@ -10,7 +10,9 @@ class AddYoutuber extends React.Component {
   // #######################################################
 
   state = {
-    title     : ''
+    title     : '',
+    genre     : '',
+    subs      : ''
   }
 
   // #######################################################
@@ -28,6 +30,7 @@ class AddYoutuber extends React.Component {
           <Link to='/'>Back to All youtubers</Link>
         </div>
       );
+
     } else if (this.state.processingAdd) {
       return (
         <div>Adding youtuber channel...</div>
@@ -39,11 +42,20 @@ class AddYoutuber extends React.Component {
           <form onSubmit={this.handleSubmit.bind(this)}>
 
             <div>
-              <label>youtuber Title:
+              <label>youtuber Title: 
                 <input type='' value={this.state.title} onChange={this.handleTitleUpdate.bind(this)} />
               </label>
             </div>
-
+            <div>
+              <label>youtuber Genre:
+                <input type='' value={this.state.genre} onChange={this.handleGenreUpdate.bind(this)} />
+              </label>
+            </div>
+            <div>
+              <label>youtuber subscriber count:
+                <input type='' value={this.state.subs} onChange={this.handleGenreUpdate.bind(this)} />
+              </label>
+            </div>
             {/* <div>
               <label>youtuber Content:
                 <textarea value={this.state.content} onChange={this.handleContentUpdate.bind(this)}></textarea>
@@ -65,8 +77,8 @@ class AddYoutuber extends React.Component {
     this.setState({title: e.target.value || null});
   }
 
-  handleContentUpdate(e) {
-    this.setState({content: e.target.value || null});
+  handleGenreUpdate(e) {
+    this.setState({genre: e.target.value || null});
   }
 
   handleSubmit(e) {
@@ -83,7 +95,7 @@ class AddYoutuber extends React.Component {
       body: JSON.stringify({
         authoredBy: this.state.authoredBy,
         title     : this.state.title,
-        content   : this.state.content
+        genre     : this.state.genre
       })}
     )
       .then (res  => {

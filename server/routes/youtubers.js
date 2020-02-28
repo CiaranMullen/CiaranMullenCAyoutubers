@@ -40,6 +40,8 @@ router.get('/:id([0-9a-fA-F]{24})', (req, res) => {
 router.post('/', (req, res) => {
   return new Youtuber({
     title     : req.body.title,
+    genre     : req.body.genre,
+    subs     : req.body.subs,
   })
   .save()
   .then (youtuber => Youtuber.populate(youtuber, {path: '_id'}))
@@ -68,6 +70,8 @@ router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
       {_id: req.params.id},
       {$set: {
         title  : req.body.title,
+        genre  : req.body.genre,
+        subs     : req.body.subs,
       }},
       {new: true}
     )

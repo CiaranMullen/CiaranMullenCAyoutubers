@@ -1,8 +1,9 @@
 import React              from 'react';
 import {Link}             from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
-import main               from '../lib/main.css';
+
 import * as Config        from '../config.json'
+import '../lib/sass/main.scss';
 
 class Youtuber extends React.Component {
 
@@ -30,10 +31,14 @@ class Youtuber extends React.Component {
       return (
         <p>Sorry, no youtubers are available</p>
       );
-    } else {
+
+    }
+     else {
       return (
         <div>
           <h1>{this.state.youtuber.title}</h1>
+          <h1>{this.state.youtuber.genre}</h1>
+          <h1>{this.state.youtuber.subs}</h1>
           <Link to='/'>Back to All youtubers</Link>
         </div>
       )
