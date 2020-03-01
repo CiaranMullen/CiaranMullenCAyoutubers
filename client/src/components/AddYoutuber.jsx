@@ -53,7 +53,7 @@ class AddYoutuber extends React.Component {
             </div>
             <div>
               <label>youtuber subscriber count:
-                <input type='' value={this.state.subs} onChange={this.handleGenreUpdate.bind(this)} />
+                <input type='' value={this.state.subs} onChange={this.handlesubsUpdate.bind(this)} />
               </label>
             </div>
             {/* <div>
@@ -81,6 +81,9 @@ class AddYoutuber extends React.Component {
     this.setState({genre: e.target.value || null});
   }
 
+  handleGenreUpdate(e) {
+    this.setState({subs: e.target.value || null});
+  }
   handleSubmit(e) {
 
     // Prevent the default form submit action
