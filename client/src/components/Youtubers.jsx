@@ -54,7 +54,12 @@ class Youtubers extends React.Component {
             ))}
           </ul>
           <p><Link to='/add-youtuber'>Add a new youtuber</Link></p>
+          <div class="footer">
+        <p>Footer</p>
         </div>
+        </div>
+        
+   
       )
     }
   }

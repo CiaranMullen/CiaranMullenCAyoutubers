@@ -1,7 +1,7 @@
 /*for navbar*/
 
 
-  .navbar { ul{ @include color( #333); }
+  .navbar { ul{ @include color( rgb(216, 20, 20)); }
 }
 
   
@@ -9,7 +9,7 @@
 
     ul {
         @include transform(0); 
-        @include backcolor( rgb(118, 11, 206)); 
+        @include backcolor( rgb(122, 199, 122)); 
       }
       
       li {

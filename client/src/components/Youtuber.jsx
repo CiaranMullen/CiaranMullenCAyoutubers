@@ -37,6 +37,7 @@ class Youtuber extends React.Component {
       return (
         <div>
           <h1>{this.state.youtuber.title}</h1>
+          <h1>{this.state.youtuber.image}</h1>
           <h1>{this.state.youtuber.genre}</h1>
           <h1>{this.state.youtuber.subs}</h1>
           <Link to='/'>Back to All youtubers</Link>

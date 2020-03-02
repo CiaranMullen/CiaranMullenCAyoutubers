@@ -1,0 +1,10 @@
+/*this is footer.scss*/
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    @include backcolor( rgb(178, 18, 252)); 
+    color: white;
+    text-align: center;
+ }

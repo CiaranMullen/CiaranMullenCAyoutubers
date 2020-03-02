@@ -14,10 +14,21 @@ h1 {
   text-align: center;
 }
 
+/*this is footer.scss*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #b212fc;
+  color: white;
+  text-align: center;
+}
+
 /*this is for header css*/
 /*for navbar*/
 .navbar ul {
-  color: #333;
+  color: #d81414;
 }
 
 .navbar ul {
@@ -25,7 +36,7 @@ h1 {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #760bce;
+  background-color: #7ac77a;
 }
 
 .navbar li {
