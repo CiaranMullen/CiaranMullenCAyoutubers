@@ -2,7 +2,8 @@ import React              from 'react';
 import {navigate, Link}   from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import * as Config        from '../config.json'
-
+import Header             from './Header';
+import NavBar             from './NavBar';
 class AddYoutuber extends React.Component {
 
   // #######################################################
@@ -11,8 +12,7 @@ class AddYoutuber extends React.Component {
 
   state = {
     title     : '',
-    genre     : '',
-    subs      : ''
+    genre     : ''
   }
 
   // #######################################################
@@ -38,6 +38,8 @@ class AddYoutuber extends React.Component {
     } else {
       return (
         <div>
+        <Header></Header>
+        <NavBar></NavBar>
           <h1>Add youtuber channel</h1>
           <form onSubmit={this.handleSubmit.bind(this)}>
 
@@ -51,11 +53,7 @@ class AddYoutuber extends React.Component {
                 <input type='' value={this.state.genre} onChange={this.handleGenreUpdate.bind(this)} />
               </label>
             </div>
-            <div>
-              <label>youtuber subscriber count:
-                <input type='' value={this.state.subs} onChange={this.handlesubsUpdate.bind(this)} />
-              </label>
-            </div>
+         
             {/* <div>
               <label>youtuber Content:
                 <textarea value={this.state.content} onChange={this.handleContentUpdate.bind(this)}></textarea>
@@ -81,9 +79,6 @@ class AddYoutuber extends React.Component {
     this.setState({genre: e.target.value || null});
   }
 
-  handleGenreUpdate(e) {
-    this.setState({subs: e.target.value || null});
-  }
   handleSubmit(e) {
 
     // Prevent the default form submit action

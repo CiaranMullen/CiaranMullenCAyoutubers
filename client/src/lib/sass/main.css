@@ -20,7 +20,7 @@ h1 {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #b212fc;
+  background-color: #1235fc;
   color: white;
   text-align: center;
 }
@@ -36,7 +36,7 @@ h1 {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #7ac77a;
+  background-color: #130ff1;
 }
 
 .navbar li {

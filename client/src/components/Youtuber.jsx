@@ -1,9 +1,12 @@
 import React              from 'react';
 import {Link}             from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
+import Header             from './Header';
+import NavBar             from './NavBar';
+
 
 import * as Config        from '../config.json'
-import '../lib/sass/main.scss';
+
 
 class Youtuber extends React.Component {
 
@@ -35,7 +38,11 @@ class Youtuber extends React.Component {
     }
      else {
       return (
+        
         <div>
+         <Header></Header>
+        <NavBar></NavBar>
+        
           <h1>{this.state.youtuber.title}</h1>
           <h1>{this.state.youtuber.image}</h1>
           <h1>{this.state.youtuber.genre}</h1>
