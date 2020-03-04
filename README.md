@@ -25,4 +25,8 @@ step 6: open the code in visualstudio and run "npm install" on the client and se
 
 step 7: do npm install cross-env on the client
 
+step 8: run npm start on the server and when it says connected to mongod
+
+step 9: run npm start on the client
+
 
