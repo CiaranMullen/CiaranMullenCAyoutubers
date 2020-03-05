@@ -29,4 +29,5 @@ step 8: run npm start on the server and when it says connected to mongod
 
 step 9: run npm start on the client
 
-
+start http://localhost:3001/
+start http://localhost:3000/youtubers
