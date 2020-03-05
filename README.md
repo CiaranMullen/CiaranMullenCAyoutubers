@@ -2,7 +2,7 @@
 
 how to start
 
-step 1: if on college computer that doesnt have access to C drive create a flder on the desktop called data 
+step 1: if on college computer that doesnt have access to C drive create a folder on the desktop called data 
 
 
 
