@@ -8,7 +8,11 @@
 .navbar{
 
     ul {
-        @include transform(0); 
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+     
         @include backcolor( rgb(19, 15, 241)); 
       }
       

@@ -54,12 +54,7 @@ class AddYoutuber extends React.Component {
               </label>
             </div>
          
-            {/* <div>
-              <label>youtuber Content:
-                <textarea value={this.state.content} onChange={this.handleContentUpdate.bind(this)}></textarea>
-              </label>
-            </div> */}
-
+          
             <div>
               <input type='submit' value='Add Youtuber' />
             </div>
