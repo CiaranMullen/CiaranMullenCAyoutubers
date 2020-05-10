@@ -4,7 +4,6 @@ import {Link}             from '@reach/router';
 import * as Config        from '../config.json'
 import Header             from './Header';
 import NavBar             from './NavBar';
-import Footer             from './Footer';
 class Youtubers extends React.Component {
 
   // #######################################################
@@ -37,7 +36,7 @@ class Youtubers extends React.Component {
         <div>
         <Header></Header>
         <NavBar></NavBar>
-        <Footer></Footer>
+        
   
           <ul>
             {this.state.youtubers.map(youtuber => (
@@ -45,11 +44,9 @@ class Youtubers extends React.Component {
             ))}
           </ul>
           <p><Link to='/add-youtuber'>Add a new youtuber</Link></p>
-          <div>
-         
-
-          </div>
-     
+          <div class="footer">
+        <p>Footer</p>
+        </div>
         </div>
         
    
